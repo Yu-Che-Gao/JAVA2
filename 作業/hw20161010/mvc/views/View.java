@@ -6,11 +6,18 @@ import java.awt.*;
 public class View {
 
     public JLabel label;
+    public JButton[] digitalButton;
+
     private JFrame frame;
     private int tempRow;
     private GridBagConstraints gbc;
     
     public View(String text) {
+        digitalButton=new JButton[10];
+        for(int i=0; i<10; i++) {
+            digitalButton[i]=new JButton(String.valueOf(i));
+        }
+
         tempRow=0;
         frame=new JFrame(text);
         frame.getContentPane().setLayout(new GridBagLayout());
@@ -41,7 +48,7 @@ public class View {
         tempRow=2;
         for(int i=0; i<3; i++) {
 			gbc=GBC(gbc, i, tempRow, 1, 1);
-			frame.getContentPane().add(new JButton(String.valueOf(i+1)), gbc);
+			frame.getContentPane().add(digitalButton[i+1], gbc);
 		}
 
         gbc=GBC(gbc, 3, tempRow, 1, 2);
@@ -50,13 +57,13 @@ public class View {
         tempRow=3;
 		for(int i=0; i<3; i++) {
 			gbc=GBC(gbc, i, tempRow, 1, 1);
-			frame.getContentPane().add(new JButton(String.valueOf(i+4)), gbc);
+			frame.getContentPane().add(digitalButton[i+4], gbc);
 		}
 		
         tempRow=4;
 		for(int i=0; i<3; i++) {
 			gbc=GBC(gbc, i, tempRow, 1, 1);
-			frame.getContentPane().add(new JButton(String.valueOf(i+7)), gbc);
+			frame.getContentPane().add(digitalButton[i+7], gbc);
 		}
 		
 		gbc=GBC(gbc, 3, tempRow, 1, 2);
@@ -64,10 +71,10 @@ public class View {
 		
         tempRow=5;
 		gbc=GBC(gbc, 0, tempRow, 2, 1);
-		frame.getContentPane().add(new JButton("0"), gbc);
+		frame.getContentPane().add(digitalButton[0], gbc);
 		
 		gbc=GBC(gbc, 2, tempRow, 1, 1);
-		frame.getContentPane().add(new JButton("0"), gbc);
+		frame.getContentPane().add(new JButton("."), gbc);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
