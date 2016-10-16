@@ -7,8 +7,8 @@ import mvc.controllers.*;
 public class Main {
     public static void main(String[] args) {         
         View view=new View("calculator");
-        // Model model=new Model();
-        // Controller controller=new Controller(model, view);
-        // controller.control();
+        Model model=new Model();
+        Controller controller=new Controller(model, view);
+        controller.control();
     }
 }
