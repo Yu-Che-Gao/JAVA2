@@ -24,8 +24,8 @@ public class Controller {
         for(int i=0; i<digitalButton.length; i++) {
             digitalButton[i].addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    model.setExpr(model.getExpr()+e.getActionCommand());
-                    view.label.setText(model.getExpr());
+                    model.setCal(model.getCal()+e.getActionCommand());
+                    view.label.setText(model.getCal());
                 }
             });
         }
@@ -34,8 +34,8 @@ public class Controller {
         for(int i=1; i<=4; i++) {
             operatorButton[i].addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    model.setExpr(model.getExpr()+e.getActionCommand());
-                    view.label.setText(model.getExpr());
+                    model.setCal(model.getCal()+e.getActionCommand());
+                    view.label.setText(model.getCal());
                 }
             });
         }
@@ -45,8 +45,8 @@ public class Controller {
                 ScriptEngineManager manager = new ScriptEngineManager();
                 ScriptEngine engine = manager.getEngineByName("JavaScript");
                 try {
-                    model.setExpr(engine.eval(model.getExpr()).toString());
-                    view.label.setText(model.getExpr());
+                    model.setCal(engine.eval(model.getCal()).toString());
+                    view.label.setText(model.getCal());
                 } catch(ScriptException ex) {
                     System.out.println(ex);
                 }

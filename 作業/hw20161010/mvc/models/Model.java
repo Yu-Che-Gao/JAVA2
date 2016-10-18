@@ -2,17 +2,17 @@ package mvc.models;
 
 public class Model {
 
-    private String expression;
+    private String calculation;
 
     public Model() {
-        this.expression="";
+        this.calculation="";
     }
 
-    public void setExpr(String expression) {
-        this.expression=expression;
+    public void setCal(String calculation) {
+        this.calculation=calculation;
     }
 
-    public String getExpr() {
-        return this.expression;
+    public String getCal() {
+        return this.calculation;
     }
 }
