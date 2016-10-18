@@ -13,9 +13,7 @@ public class View {
         frame.getContentPane().setLayout(new GridLayout(1, 3));
 
         loveLabel=new JLabel[3];
-        loveLabel[0]=new JLabel("I", new ImageIcon("img/I.jpg"), SwingConstants.CENTER);
-        
-
+        loveLabel[0]=new JLabel("I", new ImageIcon(".\\img\\I.jpg"), SwingConstants.CENTER);
         loveLabel[1]=new JLabel("Love", new ImageIcon(".\\img\\Love.png"), SwingConstants.CENTER);
         loveLabel[2]=new JLabel("You", new ImageIcon(".\\img\\You.jpg"), SwingConstants.CENTER);
 
