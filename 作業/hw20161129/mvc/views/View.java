@@ -37,7 +37,7 @@ public class View extends javax.swing.JFrame {
         leftToRight2.setLabel("=>");
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -84,12 +84,12 @@ public class View extends javax.swing.JFrame {
         pack();
     }
 
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
+    public javax.swing.JList<String> jList1;
+    public javax.swing.JList<String> jList2;
+    public javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton leftToRight1;
-    private javax.swing.JButton leftToRight2;
+    public javax.swing.JButton leftToRight1;
+    public javax.swing.JButton leftToRight2;
 }
