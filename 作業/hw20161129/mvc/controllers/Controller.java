@@ -14,6 +14,10 @@ public class Controller {
     public Controller(Model model, View view) {
         this.model=model;
         this.view=view;
+        AbstractListModel<String>[] poolModelArray=model.getPoolModel();            
+        view.jList1.setModel(poolModelArray[1]);
+        view.jList2.setModel(poolModelArray[2]);
+        view.jList3.setModel(poolModelArray[0]);
     }
 
     public void control() {
@@ -24,19 +28,8 @@ public class Controller {
         view.leftToRight1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(view.jList1.getSelectedIndex() != -1) {
-                     model.insertPool(view.jList1.getSelectedValue().toString());
-                    //  DefaultListModel<String> model = new DefaultListModel<String>();
-                     ((DefaultListModel<String>)(view.jList1.getModel())).remove(3);
-                     view.jList3.setModel(new javax.swing.AbstractListModel<String>() {
-                            public int getSize() { 
-                                return model.getPool().size(); 
-                            }
-                            public String getElementAt(int i) { 
-                                return model.getPool().toArray()[i].toString(); 
-                            }
-                     });
-                     
-                     
+                    model.insertPool(view.jList1.getSelectedValue().toString());
+                    
                 }
                 
             }

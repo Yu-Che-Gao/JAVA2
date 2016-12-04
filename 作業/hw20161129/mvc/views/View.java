@@ -18,29 +18,29 @@ public class View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "阿信", "冠佑", "石頭", "瑪莎", "怪獸", "周杰倫", "林俊傑" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        // jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        //     String[] strings = { "阿信", "冠佑", "石頭", "瑪莎", "怪獸", "周杰倫", "林俊傑" };
+        //     public int getSize() { return strings.length; }
+        //     public String getElementAt(int i) { return strings[i]; }
+        // });
         jScrollPane1.setViewportView(jList1);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Selina", "Hebe", "Ella", "LuLu", "阿妹", "阿福" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        // jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        //     String[] strings = { "Selina", "Hebe", "Ella", "LuLu", "阿妹", "阿福" };
+        //     public int getSize() { return strings.length; }
+        //     public String getElementAt(int i) { return strings[i]; }
+        // });
         jScrollPane2.setViewportView(jList2);
 
         leftToRight1.setText("=>");
 
         leftToRight2.setLabel("=>");
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        // jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        //     String[] strings = { };
+        //     public int getSize() { return strings.length; }
+        //     public String getElementAt(int i) { return strings[i]; }
+        // });
         jScrollPane3.setViewportView(jList3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
