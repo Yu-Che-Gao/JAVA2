@@ -5,6 +5,7 @@ import mvc.controllers.*;
 public class Main {
     public static void main(String[] args) {
         View view=new View("hw20161129");
+        view.setVisible(true);
         Model model=new Model();
         Controller controller=new Controller(model, view);
         controller.control();

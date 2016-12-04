@@ -1,97 +1,95 @@
 package mvc.views;
 
-import javax.swing.text.*;
-import javax.swing.border.*;
-import javax.swing.*;
-import java.awt.*;
-
-public class View {
-    private JFrame frame;
-
+public class View extends javax.swing.JFrame {
     public View(String text) {
-        frame=new JFrame(text);
-        Container cp = frame.getContentPane(); //取得內容面版
-
-        String[] strTech = {"吳宗憲", "彭于晏", "沈玉琳", "都敏俊", "高宇哲", "KID", "周杰倫", "林俊傑"};
-        String[] strTech2 = {"Selina", "Hebe", "Ella", "黃沐炎","小潔", "小優", "小call", "林志玲"};
-        //設定選項的字串陣列
-
-        DefaultListModel dlmBoyStar = new DefaultListModel();
-        DefaultListModel dlmGirlStar = new DefaultListModel();
-        DefaultListModel dlmSelStar = new DefaultListModel();
-        //宣告處理清單方塊內選項的Model物件
-
-        JList listBoyStar = new JList(dlmBoyStar);
-        JList listGirlStar =new JList(dlmGirlStar);
-        JList listSelStar = new JList(dlmSelStar);
-        //以Model物件宣告清單方塊
-
-        JLabel labelStar = new JLabel();
-        JLabel labelSelStar = new JLabel("");
-        //宣告顯示清單方塊內選項個數的訊息
-
-        JButton btnToRight = new JButton(">");
-        JButton btnToRight2 = new JButton(">");
-
-        for(String item: strTech)
-			dlmBoyStar.addElement(item);
-
-        for(String item : strTech2)
-            dlmGirlStar.addElement(item);
-
-		listBoyStar.setVisibleRowCount(5); //設定左邊清單方塊的可視項目為5列
-		listBoyStar.setSelectedIndex(0); //設定左邊清單方塊預設選取第1個選項
-
-        listGirlStar.setVisibleRowCount(5); //設定左邊清單方塊的可視項目為5列
-		listGirlStar.setSelectedIndex(0); //設定左邊清單方塊預設選取第1個選項
-
-		listSelStar.setVisibleRowCount(5);
-
-
-        cp.setLayout(new GridBagLayout());
-		//設定內容面版使用GridBagLayout管理佈局
-
-		GridBagConstraints gbc = new GridBagConstraints();
-
-		gbc.fill = GridBagConstraints.BOTH;
-
-		gbc.gridwidth = 2; gbc.gridheight = 1;
-		gbc.gridx = 0; gbc.gridy = 0;
-		cp.add(new JLabel("被選取的男明星 : "), gbc);
-
-		gbc.gridx = 3; gbc.gridy = 0;
-		cp.add(new JLabel("被選中的明星名單 : "), gbc);
-
-        gbc.gridx = 0; gbc.gridy = 6;
-		cp.add(new JLabel("被選取的女名單 : "), gbc);
-
-		gbc.gridwidth = 2; gbc.gridheight = 5;
-		gbc.gridx = 0; gbc.gridy = 1;
-		cp.add(new JScrollPane(listBoyStar), gbc); //加入左邊的清單方塊
-
-        gbc.gridwidth = 2; gbc.gridheight = 5;
-		gbc.gridx = 0; gbc.gridy = 7;
-		cp.add(new JScrollPane(listGirlStar), gbc); //加入左邊的清單方塊
-
-        gbc.gridwidth = 2; gbc.gridheight = 10;
-		gbc.gridx = 3; gbc.gridy = 1;
-		cp.add(new JScrollPane(listSelStar), gbc); //加入右邊的清單方塊
-
-        gbc.gridx = 3; gbc.gridy = 7;
-		gbc.gridwidth = 1; gbc.gridheight = 1;
-		cp.add(labelSelStar, gbc); //將標籤加入容器
-		
-		gbc.fill = GridBagConstraints.NONE;
-		gbc.insets = new Insets(10, 10, 10 ,10);
-
-		gbc.gridx = 2; gbc.gridy = 2;
-		cp.add(btnToRight, gbc); //加入將選項移至右邊的指令按鈕
-
-        gbc.gridx = 2; gbc.gridy = 7;
-		cp.add(btnToRight2, gbc); //加入將選項移至右邊的指令按鈕
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(350, 300);
-        frame.setVisible(true);
+        initComponents(text);
     }
+
+    private void initComponents(String text) {
+        this.setTitle(text);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        leftToRight1 = new javax.swing.JButton();
+        leftToRight2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        leftToRight1.setText("=>");
+
+        leftToRight2.setLabel("=>");
+
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList3);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(leftToRight1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(leftToRight2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(leftToRight1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(leftToRight2)
+                        .addGap(64, 64, 64))))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        pack();
+    }
+
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton leftToRight1;
+    private javax.swing.JButton leftToRight2;
 }
