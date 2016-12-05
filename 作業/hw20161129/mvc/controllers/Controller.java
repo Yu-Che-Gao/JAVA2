@@ -28,8 +28,8 @@ public class Controller {
         view.leftToRight1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(view.jList1.getSelectedIndex() != -1) {
-                    model.insertPool(view.jList1.getSelectedValue().toString());
-                    
+                    // model.insertPool(1, view.jList1.getSelectedValue());
+                    model.getPoolModel()[2].addElement("aaa");
                 }
                 
             }
