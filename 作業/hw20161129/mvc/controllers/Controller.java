@@ -10,28 +10,42 @@ public class Controller {
    
     private Model model;
     private View view;
+    private customListModel[] poolModelArray;
 
     public Controller(Model model, View view) {
         this.model=model;
         this.view=view;
-        AbstractListModel<String>[] poolModelArray=model.getPoolModel();            
-        view.jList1.setModel(poolModelArray[1]);
-        view.jList2.setModel(poolModelArray[2]);
-        view.jList3.setModel(poolModelArray[0]);
+        poolModelArray=model.getPoolModel();            
+        view.jList1.setModel((ListModel<String>)poolModelArray[1]);
+        view.jList2.setModel((ListModel<String>)poolModelArray[2]);
+        view.jList3.setModel((ListModel<String>)poolModelArray[0]);
+        view.jList1.setSelectedIndex(0);
+        view.jList2.setSelectedIndex(0);
     }
 
     public void control() {
-        left2Right1Action();
+        List1ToRight();
+        List2ToRight();
     }
 
-    private void left2Right1Action() {
+    private void List1ToRight() {
         view.leftToRight1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(view.jList1.getSelectedIndex() != -1) {
-                    // model.insertPool(1, view.jList1.getSelectedValue());
-                    model.getPoolModel()[2].addElement("aaa");
+                    poolModelArray[0].add(view.jList1.getSelectedValue());
+                    poolModelArray[1].remove(view.jList1.getSelectedIndex());
                 }
-                
+            }
+        });
+    }
+
+    private void List2ToRight() {
+        view.leftToRight2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(view.jList2.getSelectedIndex() != -1) {
+                    poolModelArray[0].add(view.jList2.getSelectedValue());
+                    poolModelArray[2].remove(view.jList2.getSelectedIndex());
+                }
             }
         });
     }
