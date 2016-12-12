@@ -7,27 +7,25 @@ public class Model {
     private DefaultComboBoxModel cmbModel=null;
     
     public Model() {
-        listData[0] = new String("程式設計");
-		listData[1] = new Book("Java 2 入門進階 – 適用JDK6.0",
-			"文魁資訊", 590.0, new ImageIcon("image\\P4137.jpg"),
+        listData[0] = new String("男明星");
+		listData[1] = new Book("高宇哲",
+			"不相信音樂", 590.0, new ImageIcon("image\\高宇哲.jpg"),
 			"2005-5-1");
-		listData[2] = new Book("Visual C++.NET 入門進階", 
-			"宇哲資訊", 750.0, new ImageIcon("image\\P3237.jpg"), 
+		listData[2] = new Book("怪獸", 
+			"相信音樂", 750.0, new ImageIcon("image\\怪獸.jpg"), 
 			"2003-9-1");
-		listData[3] = new String("資料庫");
-		listData[4] = new Book("Access 2003 徹底研究", 
-			"語文資訊", 590.0, new ImageIcon("image\\A4023.jpg"), 
+		listData[3] = new Book("瑪莎", 
+			"相信音樂", 590.0, new ImageIcon("image\\瑪莎.jpg"), 
 			"2004-3-1");
-		listData[5] = new Book("Access 2003 程式設計", 
-			"gogo資訊", 660.0, new ImageIcon("image\\A4033.jpg"),
+		listData[4] = new Book("阿信", 
+			"相信音樂", 590.0, new ImageIcon("image\\阿信.jpg"), 
+			"2004-3-1");
+		listData[5] = new Book("石頭", 
+			"相信音樂", 660.0, new ImageIcon("image\\石頭.jpg"),
 			"2004-5-1");
-		listData[6] = new String("動態網頁");
-		listData[7] = new Book("JSP 動態網頁入門實務", 
-			"哈哈資訊", 720.0, new ImageIcon("image\\W3135.jpg"), 
-			"2003-12-1");
-		listData[8] = new Book("ASP 動態網頁入門實務", 
-			"XDD資訊", 580.0, new ImageIcon("image\\W4075.jpg"), 
-			"2004-7-1");
+		listData[6] = new Book("冠佑", 
+			"相信音樂", 660.0, new ImageIcon("image\\冠佑.jpg"),
+			"2004-5-1");
 
         cmbModel = new DefaultComboBoxModel(){
 
